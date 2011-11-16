@@ -9,9 +9,12 @@ class X {
     }
   }
 
+  private static int DigitToInt(char digit) {
+    if(digit >= '0' && digit <= '9') return digit - '0';
+    throw new ArgumentException("digit");
+  }
+
   private static IEnumerable<int> DigitsToInt(string digits) {
-    return from ch in digits
-      where ch >= '0' && ch <= '9'
-      select ch - '0';
+    return digits.Where(ch => ch>='0' && ch<='9').Select(DigitToInt);
   }
 }
