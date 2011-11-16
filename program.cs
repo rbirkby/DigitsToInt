@@ -11,7 +11,7 @@ class X {
 
   private static IEnumerable<int> DigitsToInt(string digits) {
     return from ch in digits
-      where ch > '0' && ch < '9'
+      where ch >= '0' && ch <= '9'
       select ch - '0';
   }
 }
